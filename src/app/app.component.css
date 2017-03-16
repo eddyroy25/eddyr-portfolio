@@ -1,0 +1,186 @@
+nav {
+	display: block;
+	background-color: #2a395b;
+	font-family: 'Josefin Sans';
+	font-size: 1em;
+	color: #141a29;
+	text-align: center;
+	border-radius: 5px;
+}
+
+nav ul {
+	padding-left: 0;
+	margin-bottom:0;
+}
+
+nav ul li{
+	display:inline-block;
+	background-color: #586176;
+	width: 5em;
+	height: 3em;
+	padding-top: 0.5em;
+	border-radius: 5px;
+}
+
+div#naveducation {
+	border-radius: 5px;
+}
+
+div#navportfolio {
+	padding-left: 2.5em;
+	border-radius: 5px;
+}
+div#navcontact {
+	padding-right: 2.5em;
+	border-radius: 5px;
+}
+
+h1{
+	color: #2a395b;
+	font-family: 'Josefin Sans';
+	font-size: 3em;
+	padding-left: 1em;
+	position:relative;
+	padding-top: 2em;
+	margin-top:0px;
+}
+
+h2 {
+	color: #92969f;
+	font-family: 'Josefin Sans';
+	font-size: 3em;
+	text-align: center;
+	position:relative;
+	padding-left: 2em;
+	padding-bottom: 2em;
+	margin-bottom: 0px;
+}
+
+h3 {
+	color: #92969f;
+	font-family: 'Josefin Sans';
+	font-size: 2em;
+	position:relative;
+	padding-right: 1em;
+	padding-top: 1em;
+	text-align: right;
+	padding-bottom: 1em;
+	margin-top:0px;
+}
+
+section#titles {
+	/* background-image: url('../assets/images/sky-2.jpg'); */
+	background-color: #d0d6e2;
+	border-radius: 5px;
+}
+
+div.first{
+	margin-bottom:1em;
+}
+
+section#aboutme img{
+	width: 11.2em;
+	border: solid 5px #d0d6e2;
+	float:right;
+	border-radius: 5px;
+}
+
+section#aboutme .hobbies{
+	width: 5.5em;
+	border: solid 5px #d0d6e2;
+	float:left;
+	border-radius: 5px;
+	margin-bottom:1.4em;
+}
+
+section#aboutme .left{
+	margin-right:1em;
+}
+
+
+
+section#aboutme p{
+	color: #141a29;
+	font-family: 'Josefin Sans';
+	font-size: 1em;
+	border: solid 5px #d0d6e2;
+	padding-bottom: 0.5em;
+	display: block;
+	border-radius: 5px;
+}
+
+#titleaboutme {
+	background-color: #2a395b;
+	border-radius: 5px;
+	padding-top: 1em;
+	border-radius: 5px;
+}
+
+#about{
+	padding-right:0;
+}
+
+#intro{
+	height: 11.2em;
+}
+
+#me {
+	padding-left:0;
+}
+
+#hobbiesimg{
+	padding-right:0;
+}
+
+#hobbies {
+	padding-left:1em;
+	padding-bottom: 0;
+	height: 7em;
+}
+
+#hobbiesp{
+	height: 12.4em;
+}
+
+@media screen and (max-width: 385px) {
+	section#aboutme .hobbies{
+		width: 4.5em;
+		border: solid 5px #d0d6e2;
+		float:left;
+		border-radius: 5px;
+		margin-bottom: 1em;
+	}
+	
+	section#aboutme .left{
+	margin-right:0.2em;
+	}
+	
+	section#aboutme img{
+		width: 9.5em;
+		border: solid 5px #d0d6e2;
+		float:right;
+		border-radius: 5px;
+	}
+	
+	section#aboutme p{
+		color: #141a29;
+		font-family: 'Josefin Sans';
+		font-size: 0.84em;
+		border: solid 5px #d0d6e2;
+		display: block;
+		border-radius: 5px;
+	}
+	#intro{
+		height: 11.3em;
+	}
+	#hobbiesp{
+		height: 12em;
+	}
+	#hobbies{
+		padding-left:0;
+		padding-right:1em;
+	}
+	div.first{
+	margin-bottom:0;
+	}
+}
