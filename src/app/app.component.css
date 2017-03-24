@@ -66,6 +66,8 @@ h3 {
 	text-align: right;
 	padding-bottom: 1em;
 	margin-top:0px;
+	background-color: #2a395b;
+	border-radius: 5px;
 }
 
 section#titles {
@@ -99,7 +101,7 @@ section#aboutme .left{
 
 
 
-section#aboutme p{
+ p{
 	color: #141a29;
 	font-family: 'Josefin Sans';
 	font-size: 1em;
@@ -109,11 +111,8 @@ section#aboutme p{
 	border-radius: 5px;
 }
 
-#titleaboutme {
-	background-color: #2a395b;
-	border-radius: 5px;
-	padding-top: 1em;
-	border-radius: 5px;
+#title {
+
 }
 
 #about{
@@ -138,25 +137,52 @@ section#aboutme p{
 	height: 7em;
 }
 
-#hobbiesp{
+.text{
 	height: 12.4em;
 }
 
+section#education div {
+	height:100%;
+}
+
+section#education img{
+	transform: rotate(90deg);
+	width: 12.3em;
+	margin-top:2.5em;
+	padding-right:0;
+	border: solid 5px #d0d6e2;
+	border-radius: 5px;
+}
+
+
 @media screen and (max-width: 385px) {
+	
+	div#navabout, div#naveducation, div#navportfolio, div#navskills, div#navcontact {
+		padding:0;
+	}
+	
+	h1{
+		font-size: 2em;
+	}
+	
+	h2 {
+		font-size: 2em;
+	}
 	section#aboutme .hobbies{
-		width: 4.5em;
+		max-width: 4.5em;
 		border: solid 5px #d0d6e2;
-		float:left;
+		/* float:right; */
 		border-radius: 5px;
-		margin-bottom: 1em;
+		margin-bottom: 1.2em;
 	}
 	
 	section#aboutme .left{
-	margin-right:0.2em;
+		margin-right:0.2em;
+		/* float:right; */
 	}
 	
 	section#aboutme img{
-		width: 9.5em;
+		width: 9em;
 		border: solid 5px #d0d6e2;
 		float:right;
 		border-radius: 5px;
@@ -165,7 +191,7 @@ section#aboutme p{
 	section#aboutme p{
 		color: #141a29;
 		font-family: 'Josefin Sans';
-		font-size: 0.84em;
+		font-size: 0.8em;
 		border: solid 5px #d0d6e2;
 		display: block;
 		border-radius: 5px;
@@ -174,12 +200,22 @@ section#aboutme p{
 		height: 11.3em;
 	}
 	#hobbiesp{
-		height: 12em;
+		width: 11.3em;
+		height: 13em;
+		float:right;
 	}
 	#hobbies{
-		padding-left:0;
-		padding-right:1em;
+		padding-left:0.35em;
+		/* padding-right:0.5em; */
+		/* float:right; */
 	}
+	#hobbiesimg{
+		padding-left:1em;
+		/* padding-right:0.5em; */	
+	/* } */
+	/* #hobbiesimg img.hobbies{ */
+	}
+	
 	div.first{
 	margin-bottom:0;
 	}
