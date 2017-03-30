@@ -137,10 +137,6 @@ section#aboutme .left{
 	height: 7em;
 }
 
-.text{
-	height: 12.4em;
-}
-
 section#education div {
 	height:100%;
 }
@@ -169,11 +165,15 @@ section#education img{
 		font-size: 2em;
 	}
 	section#aboutme .hobbies{
-		max-width: 4.5em;
+		max-width: 4.3em;
 		border: solid 5px #d0d6e2;
 		/* float:right; */
 		border-radius: 5px;
 		margin-bottom: 1.2em;
+	}
+	
+		section#aboutme .portrait{
+		padding-left: 0.1em;	
 	}
 	
 	section#aboutme .left{
@@ -182,7 +182,7 @@ section#education img{
 	}
 	
 	section#aboutme img{
-		width: 9em;
+		width: 9.15em;
 		border: solid 5px #d0d6e2;
 		float:right;
 		border-radius: 5px;
@@ -219,4 +219,19 @@ section#education img{
 	div.first{
 	margin-bottom:0;
 	}
+	
+	section#education p {
+	font-size: 0.8em;
+}
+
+section#education img{
+	transform: rotate(90deg);
+	width: 11.7em;
+	position:relative;
+	top: 0;
+	margin:2.3em 5em 0 0;
+	/* padding-right:0; */
+	border: solid 5px #d0d6e2;
+	border-radius: 5px;
+}
 }
