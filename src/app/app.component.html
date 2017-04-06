@@ -1,5 +1,5 @@
 <div class='container'>
-<header>
+<header [@navTranslate]>
 		<nav>
 			<ul>
 				<div class='row'>
@@ -25,10 +25,10 @@
 		</nav>
 </header>
 <section id='titles'>
-<h1>
+<h1 [@nameTranslate]>
   {{title.name}}
  </h1>
- <h2>
+ <h2 [@webTranslate]>
   {{title2}}
 </h2>
 </section>
@@ -36,7 +36,7 @@
 <!-- <p>{{hero.id}}</p> -->
 <!-- <input [(ngModel)]="hero.name" placeholder="name"> -->
 <section id='aboutme'>
-	<h3>{{section1}}</h3>
+	<h3 (click)='changeColor()' [@ChangeColor]='sectionState'>{{section1}}</h3>
 	<div class='first row'>
 		<div id='about' class='aboutme col-xs-6 col-sm-6'>
 			<p id='intro'>Hello, my name is Eddy and I am a webdeveloper. I am 28 years old and I live in Besançon, in France. Here you will discover my projects, but before that I introduce myself. </p>
@@ -52,7 +52,7 @@
 	</div>
 </section>
 <section id='education'>
-<h3>{{section2}}</h3>
+<h3 [@ChangeColor]='sectionState'>{{section2}}</h3>
 	<div class='first row'>
 		<div class='col-xs-12 col-sm-12'>
 			<img src='assets/images/desktop.png'/>
@@ -64,34 +64,65 @@
 </section>
 
 <section id='skills'>
-<h3>{{section3}}</h3>
-<div class='first row'>
-		<div class='col-xs-12 col-sm-12'>
-			<img class='php' src='assets/images/php.png'/>
-			<img class='mysql' src='assets/images/mysql.png'/>
-			<img class='js' src='assets/images/js.png'/>
-			<img class='jquery' src='assets/images/jquery.png'/>
-		</div>
-</div>
-<div class='first row'>
-		<div class='col-xs-12 col-sm-12'>
-			<img class='html' src='assets/images/html.png'/>
-			<img class='css' src='assets/images/css.png'/>
-			<img class='bootstrap' src='assets/images/bootstrap.png'/>
-			<img class='sass' src='assets/images/sass.png'/>
-			
-		</div>
-</div>
-<div class='first row'>
-		<div class='col-xs-12 col-sm-12'>
-			<img class='angular' src='assets/images/angular.png'/>
-			<img class='github' src='assets/images/github.png'/>
-			<img class='photoshop' src='assets/images/photoshop.png'/>
-			<img class='wordpress' src='assets/images/wordpress.png'/>
-		</div>
-</div>
+<h3 [@ChangeColor]='sectionState'>{{section3}}</h3>
+	<div id='skillscontent' class='row'>
+			<div class='first row img-responsive'>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='php' src='assets/images/php.png'/>
+						<p id='skillsname'>PHP</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='mysql' src='assets/images/mysql.png'/>
+						<p id='skillsname'>MySQL</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='js' src='assets/images/js.png'/>
+						<p id='skillsname'>Javascript</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='jquery' src='assets/images/jquery.png'/>
+						<p id='skillsname'>JQuery</p>
+					</div>
+			</div>
+			<div class='first row'>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='html' src='assets/images/html.png'/>
+						<p id='skillsname'>HTML</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='css' src='assets/images/css.png'/>
+						<p id='skillsname'>CSS</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='bootstrap' src='assets/images/bootstrap.png'/>
+						<p id='skillsname'>Bootstrap</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='sass' src='assets/images/sass.png'/>
+						<p id='skillsname'>SASS</p>
+					</div>
+			</div>
+			<div class='first row'>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='angular' src='assets/images/angular.png'/>
+						<p id='skillsname'>Angular</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='github' src='assets/images/github.png'/>
+						<p id='skillsname'>Github</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='photoshop' src='assets/images/photoshop.png'/>
+						<p id='skillsname'>Photoshop</p>
+					</div>
+					<div class='col-xs-3 col-sm-3'>
+						<img class='wordpress' src='assets/images/wordpress.png'/>
+						<p id='skillsname'>Wordpress</p>
+					</div>
+			</div>
+	</div>
 </section>
 
-<h3>{{section4}}</h3>
-<h3>{{section5}}</h3>
+<h3 [@ChangeColor]='sectionState'>{{section4}}</h3>
+<h3 [@ChangeColor]='sectionState'>{{section5}}</h3>
 </div>
