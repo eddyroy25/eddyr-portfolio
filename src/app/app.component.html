@@ -1,24 +1,24 @@
-<div class='container'>
+<div (click) = 'changeColor()' class='container'>
 <header [@navTranslate]>
 		<nav>
 			<ul>
 				<div class='row'>
 					<div id='navabout' class='col-xs-offset-1 col-xs-3  col-sm-3 col-sm-offset-1'>
-						<li>{{section1}}</li>
+						<li><a href='#aboutme' target='_self'>{{section1}}</a></li>
 					</div>
 					<div id='naveducation' class='col-xs-4 col-sm-4'>
-						<li>{{section2}}</li>
+						<li><a href='#education'>{{section2}}</a></li>
 					</div>
 					<div id='navskills' class='col-xs-3 col-sm-3'>
-						<li>{{section3}}</li>
+						<li><a href='#skills'>{{section3}}</a></li>
 					</div>
 				</div>
 				<div class='row'>
 					<div id='navportfolio' class='col-xs-4 col-xs-offset-2 col-sm-4 col-sm-offset-2'>
-						<li>{{section4}}</li>
+						<li><a href='#portfolio'>{{section4}}</a></li>
 					</div>
 					<div id='navcontact' class='col-xs-4 col-sm-4'>
-						<li>{{section5}}</li>
+						<li><a href='#contact'>{{section5}}</a></li>
 					</div>
 				</div>
 			</ul>
@@ -36,7 +36,7 @@
 <!-- <p>{{hero.id}}</p> -->
 <!-- <input [(ngModel)]="hero.name" placeholder="name"> -->
 <section id='aboutme'>
-	<h3 (click)='changeColor()' [@ChangeColor]='sectionState'>{{section1}}</h3>
+	<h3 [@ChangeColor]='sectionState'>{{section1}}</h3>
 	<div class='first row'>
 		<div id='about' class='aboutme col-xs-6 col-sm-6'>
 			<p id='intro'>Hello, my name is Eddy and I am a webdeveloper. I am 28 years old and I live in Besançon, in France. Here you will discover my projects, but before that I introduce myself. </p>
@@ -116,7 +116,7 @@
 						<p id='skillsname'>Photoshop</p>
 					</div>
 					<div class='col-xs-3 col-sm-3'>
-						<img class='wordpress' src='assets/images/wordpress.png'/>
+						<img class='wordpress' src='assets/images/wp.png'/>
 						<p id='skillsname'>Wordpress</p>
 					</div>
 			</div>

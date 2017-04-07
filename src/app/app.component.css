@@ -1,3 +1,8 @@
+header {
+	position: fixed;
+	z-index: 2;
+	width: 94%;
+}
 nav {
 	display: block;
 	background-color: #2a395b;
@@ -20,6 +25,18 @@ nav ul li{
 	height: 3em;
 	padding-top: 0.5em;
 	border-radius: 5px;
+}
+
+nav ul li a {
+	text-decoration:none;
+	color: inherit;
+	transition: 0.5s ease;
+}
+
+nav ul li a:hover {
+	text-decoration:none;
+	color: white;
+	transition: 0.5s ease;
 }
 
 div#naveducation {

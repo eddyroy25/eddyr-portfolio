@@ -28,21 +28,20 @@ export class Title {
   animations : [
 	trigger('ChangeColor', [
 		state('inactive',style ({
-			backgroundColor: '#586176',
-			Color: '#2a395b'
+			backgroundColor: '#6e82af',
+			color: '#2a395b'
 		})),
 		state('active', style ({
 			backgroundColor: '#2a395b',
-			Color: '#d0d6e2'
+			color: '#d0d6e2'
 		})),
 		state('third', style ({
-			backgroundColor: 'green'
-		})),
-		
-		transition ('inactive=>active', [animate('2s ease')]),
-		transition ('active=>inactive', [animate('2s ease')]),
-		transition ('active=>third', [animate('2s ease')]),
-		transition ('third=>inactive', [animate('2s ease')])
+			backgroundColor: '#5f677a',
+			color: '#87aaff'
+		})),		
+		transition ('inactive=>active', [animate('5s ease')]),
+		transition ('active=>third', [animate('5s ease')]),
+		transition ('third=>inactive', [animate('5s ease')])
 	]),
 	trigger('nameTranslate', [
 		transition ('void=> *',[
@@ -78,13 +77,13 @@ export class Title {
 })
 
 export class AppComponent{
-	
-	  title2 = "Webdeveloper";
+
+		changeColor(){
+		this.sectionState= (this.sectionState === 'inactive') ? 'active' : 'inactive' && (this.sectionState === 'active') ? 'third' : 'active' && (this.sectionState === 'third') ? 'inactive' : 'third';	
+		}
+	 title2 = "Webdeveloper";
 	  section1 = "About me";
 	  sectionState: string = 'inactive';
-	  changeColor(){
-		  this.sectionState= (this.sectionState === 'inactive') ? 'active' : 'inactive' && (this.sectionState === 'active') ? 'third' : 'active' && (this.sectionState === 'third') ? 'inactive' : 'third';
-	  }
 	  section2 = "Education";
 	  section3 = "Skills";
 	  section4 = "Portfolio";
