@@ -2,13 +2,17 @@ import { 	Component,
 			Input,
 			trigger,
 			state,
-		    style,
-		    transition,
+		  style,
+		  transition,
 			keyframes,
-		    animate,
+		  animate,
 			ElementRef,
 			OnInit
  } from '@angular/core';
+
+import {
+	Contact
+} from './contact';
 
 export class Hero {
 	id : number;
@@ -38,7 +42,7 @@ export class Title {
 		state('third', style ({
 			backgroundColor: '#5f677a',
 			color: '#87aaff'
-		})),		
+		})),
 		transition ('inactive=>active', [animate('5s ease')]),
 		transition ('active=>third', [animate('5s ease')]),
 		transition ('third=>inactive', [animate('5s ease')])
@@ -62,16 +66,6 @@ export class Title {
 			style({ transform:'translateX(-100%)'}),
 			animate('5s ease')
 			])
-	]),
-	trigger('navTranslate', [
-		transition ('void=> *',[
-			style({ transform:'translateY(-100%)'}),
-			animate('5s ease')
-			]),
-		transition ('*=> void',[
-			style({ transform:'translateY(100%)'}),
-			animate('5s ease')
-			])
 	])
 	]
 })
@@ -79,7 +73,10 @@ export class Title {
 export class AppComponent{
 
 		changeColor(){
-		this.sectionState= (this.sectionState === 'inactive') ? 'active' : 'inactive' && (this.sectionState === 'active') ? 'third' : 'active' && (this.sectionState === 'third') ? 'inactive' : 'third';	
+		this.sectionState= (this.sectionState === 'inactive') ? 'active' : 'inactive' && (this.sectionState === 'active') ? 'third' : 'active' && (this.sectionState === 'third') ? 'inactive' : 'third';
+		}
+		onSubmit(value: any){
+			console.log(value);
 		}
 	 title2 = "Webdeveloper";
 	  section1 = "About me";
@@ -88,6 +85,9 @@ export class AppComponent{
 	  section3 = "Skills";
 	  section4 = "Portfolio";
 	  section5 = "Contact";
+		
+		contact = new Contact();
+
 	  name = 'Eddy';
 	  age = '28';
 	  hero: Hero = {
@@ -95,8 +95,7 @@ export class AppComponent{
 	  name: 'Hello'
 	  };
 
-	title : Title = {	
+	title : Title = {
 	name: 'Eddy ROY,'
 }
 }
-

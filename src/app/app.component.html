@@ -1,6 +1,6 @@
 <div (click) = 'changeColor()' class='container'>
-<header [@navTranslate]>
-		<nav>
+<header>
+		<nav class='navbar-fixed-top'>
 			<ul>
 				<div class='row'>
 					<div id='navabout' class='col-xs-offset-1 col-xs-3  col-sm-3 col-sm-offset-1'>
@@ -24,6 +24,7 @@
 			</ul>
 		</nav>
 </header>
+<main>
 <section id='titles'>
 <h1 [@nameTranslate]>
   {{title.name}}
@@ -124,5 +125,44 @@
 </section>
 
 <h3 [@ChangeColor]='sectionState'>{{section4}}</h3>
+<section id='contact'>
 <h3 [@ChangeColor]='sectionState'>{{section5}}</h3>
+<form #validateform='ngForm' (ngSubmit)='onSubmit(validateform.value)'>
+		<div class='form-group'>
+			<input type='text' class='form-control' name='name' placeholder="Votre nom..." ngControl='name' required [(ngModel)]='contact.name' #name='ngModel'>
+		</div>
+		<div *ngIf='name.errors && (name.dirty || name.touched)' class='alert'>
+				<div [hidden]='!name.errors.required'>
+					Vous devez saisir votre nom
+			</div>
+		</div>
+		<div class='form-group'>
+			<input type='text' class='form-control' name='fname' placeholder="Votre prénom..." required [(ngModel)]='contact.fname' #fname='ngModel'>
+		</div>
+		<div *ngIf='fname.errors && (fname.dirty || fname.touched)' class='alert'>
+				<div [hidden]='!fname.errors.required'>
+					Vous devez saisir votre prénom
+			</div>
+		</div>
+		<div class='form-group'>
+			<input type='email' class='form-control' name='email' placeholder="Votre e-mail..." required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]='contact.email' #email='ngModel'>
+		</div>
+		<div class="alert" *ngIf='fname.errors && (fname.dirty || fname.touched)'>
+        <div class="md-char-counter" [hidden]="!email.errors.required">
+            Vous devez saisir votre E-mail.
+        </div>
+        <div class="md-char-counter" [hidden]="!email.errors.pattern">
+            Email invalide.
+        </div>
+    </div>
+		<div class='form-group'>
+			<input type='tel' class='form-control' name='tel' placeholder="Votre numéro..." ngModel>
+		</div>
+		<div class='form-group'>
+			<textarea type='text' class='form-control' name='message' value='message' placeholder="Votre message..." required ngModel></textarea>
+		</div>
+			<button type='submit' name='submit'>Envoyer</button>
+	</form>
+</section>
+</main>
 </div>
