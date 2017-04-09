@@ -145,7 +145,7 @@
 			</div>
 		</div>
 		<div class='form-group'>
-			<input type='email' class='form-control' name='email' placeholder="Votre e-mail..." required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]='contact.email' #email='ngModel'>
+			<input type='email' class='form-control' name='email' placeholder="Votre e-mail..." required [(ngModel)]='contact.email' #email='ngModel'>
 		</div>
 		<div class="alert" *ngIf='fname.errors && (fname.dirty || fname.touched)'>
         <div class="md-char-counter" [hidden]="!email.errors.required">
