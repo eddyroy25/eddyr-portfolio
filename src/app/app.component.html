@@ -127,11 +127,11 @@
 <h3 [@ChangeColor]='sectionState'>{{section4}}</h3>
 <section id='contact'>
 <h3 [@ChangeColor]='sectionState'>{{section5}}</h3>
-<form #validateform='ngForm' (ngSubmit)='onSubmit(validateform.value)'>
+<form #validateform='ngForm' (ngSubmit)='onSubmit(validateform.value)' method='post' action='validate.php'>
 		<div class='form-group'>
 			<input type='text' class='form-control' name='name' placeholder="Votre nom..." ngControl='name' required [(ngModel)]='contact.name' #name='ngModel'>
 		</div>
-		<div *ngIf='name.errors && (name.dirty || name.touched)' class='alert'>
+		<div *ngIf='name.errors && (name.dirty || name.touched)' class='alert' id='err'>
 				<div [hidden]='!name.errors.required'>
 					Vous devez saisir votre nom
 			</div>
@@ -139,27 +139,40 @@
 		<div class='form-group'>
 			<input type='text' class='form-control' name='fname' placeholder="Votre prénom..." required [(ngModel)]='contact.fname' #fname='ngModel'>
 		</div>
-		<div *ngIf='fname.errors && (fname.dirty || fname.touched)' class='alert'>
+		<div *ngIf='fname.errors && (fname.dirty || fname.touched)' class='alert' id='err'>
 				<div [hidden]='!fname.errors.required'>
 					Vous devez saisir votre prénom
 			</div>
 		</div>
 		<div class='form-group'>
-			<input type='email' class='form-control' name='email' placeholder="Votre e-mail..." required [(ngModel)]='contact.email' #email='ngModel'>
+			<input type='text' class='form-control' name='email' placeholder="Votre e-mail..." pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required [(ngModel)]='contact.email' #email='ngModel'>
 		</div>
-		<div class="alert" *ngIf='fname.errors && (fname.dirty || fname.touched)'>
-        <div class="md-char-counter" [hidden]="!email.errors.required">
-            Vous devez saisir votre E-mail.
-        </div>
-        <div class="md-char-counter" [hidden]="!email.errors.pattern">
-            Email invalide.
-        </div>
-    </div>
-		<div class='form-group'>
-			<input type='tel' class='form-control' name='tel' placeholder="Votre numéro..." ngModel>
+		<div class="alert" *ngIf='email.errors && email.touched' id='err'>
+					<div class="md-char-counter" [hidden]='!email.errors.required'>
+						Vous devez saisir votre E-mail.
+					</div>
+					<div class="md-char-counter" [hidden]='!email.errors.pattern'>
+						E-mail invalide.
+					</div>
 		</div>
 		<div class='form-group'>
-			<textarea type='text' class='form-control' name='message' value='message' placeholder="Votre message..." required ngModel></textarea>
+			<input type='tel' class='form-control' name='tel' placeholder="Votre numéro..." pattern="[0-9]+" required [(ngModel)]='contact.tel' #tel='ngModel'>
+		</div>
+		<div class="alert" *ngIf='tel.errors && tel.touched' id='err'>
+					<div class="md-char-counter" [hidden]='!tel.errors.required'>
+						Vous devez saisir votre numéro.
+					</div>
+					<div class="md-char-counter" [hidden]='!tel.errors.pattern'>
+						Numéro invalide.
+					</div>
+		</div>
+		<div class='form-group'>
+			<textarea type='text' class='form-control' name='message' value='message' placeholder="Votre message..." required [(ngModel)]='contact.message' #message='ngModel'></textarea>
+		</div>
+				<div *ngIf='message.errors && (message.dirty || message.touched)' class='alert' id='err'>
+				<div [hidden]='!message.errors.required'>
+					Vous devez saisir un message
+			</div>
 		</div>
 			<button type='submit' name='submit'>Envoyer</button>
 	</form>

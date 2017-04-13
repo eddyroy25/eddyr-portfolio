@@ -211,6 +211,16 @@ section#education img{
 	background-color: red;
 }
 
+#err {
+	margin: 0 auto;
+	padding: 0 1em 0 1em;
+	border: solid 2px orange;
+	width: 18em;
+}
+
+#err div {
+	width: 18em;
+}
 
 @media screen and (max-width: 385px) {
 

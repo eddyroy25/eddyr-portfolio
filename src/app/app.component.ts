@@ -9,10 +9,13 @@ import { 	Component,
 			ElementRef,
 			OnInit
  } from '@angular/core';
+ 
+// import {HTTP_PROVIDERS}    from '@angular/http';
+// import { HttpModule } from '@angular/http';
 
-import {
-	Contact
-} from './contact';
+import {Contact} from './contact';
+
+import {ContactService}    from './contactservice';
 
 export class Hero {
 	id : number;
@@ -29,6 +32,7 @@ export class Title {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  // providers: [HttpModule, ContactService],
   animations : [
 	trigger('ChangeColor', [
 		state('inactive',style ({
@@ -76,7 +80,7 @@ export class AppComponent{
 		this.sectionState= (this.sectionState === 'inactive') ? 'active' : 'inactive' && (this.sectionState === 'active') ? 'third' : 'active' && (this.sectionState === 'third') ? 'inactive' : 'third';
 		}
 		onSubmit(value: any){
-			console.log(value);
+			console.log(value);	
 		}
 	 title2 = "Webdeveloper";
 	  section1 = "About me";
@@ -86,7 +90,7 @@ export class AppComponent{
 	  section4 = "Portfolio";
 	  section5 = "Contact";
 		
-		contact = new Contact();
+	contact = new Contact();
 
 	  name = 'Eddy';
 	  age = '28';
