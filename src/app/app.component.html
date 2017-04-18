@@ -174,7 +174,7 @@
 					Vous devez saisir un message
 			</div>
 		</div>
-			<button type='submit' name='submit'>Envoyer</button>
+			<button [disabled]="!ngForm.valid" type='submit' name='submit'>Envoyer</button>
 	</form>
 </section>
 </main>

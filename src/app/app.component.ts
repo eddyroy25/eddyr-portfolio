@@ -10,12 +10,15 @@ import { 	Component,
 			OnInit
  } from '@angular/core';
  
+import { FormGroup , FormControl, Validators } from '@angular/forms';
+import { RequestOptions, URLSearchParams, Headers , Http}    from '@angular/http';
+ 
 // import {HTTP_PROVIDERS}    from '@angular/http';
 // import { HttpModule } from '@angular/http';
 
 import {Contact} from './contact';
 
-import {ContactService}    from './contactservice';
+// import {ContactService}    from './contactservice';
 
 export class Hero {
 	id : number;
@@ -79,8 +82,48 @@ export class AppComponent{
 		changeColor(){
 		this.sectionState= (this.sectionState === 'inactive') ? 'active' : 'inactive' && (this.sectionState === 'active') ? 'third' : 'active' && (this.sectionState === 'third') ? 'inactive' : 'third';
 		}
+		
+		name: string;
+		fname: string;
+		email: string;
+		message: string;
+		endpoint : string;
+
+    constructor( private http : Http) {
+        this.http = http;
+    }
+
+    ngForm = new FormGroup({
+        name: new FormControl(null),
+        fname: new FormControl(null),
+        email: new FormControl(null),
+        tel: new FormControl(null),
+        message: new FormControl(null)
+    });
 		onSubmit(value: any){
-			console.log(value);	
+			console.log(value.name);
+			
+		let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({ headers: headers });
+
+        this.endpoint = "http://eddyr.marmier.codeur.online/validate.php";
+
+
+        let postVars = {
+            name : value.name,
+            fname : value.fname,
+            email : value.email,
+            tel : value.tel,
+            message : value.message
+        };
+		
+		console.log(postVars);
+
+        this.http.post(this.endpoint, postVars, options )
+            .subscribe(
+                response => console.log(response)
+            )
 		}
 	 title2 = "Webdeveloper";
 	  section1 = "About me";
@@ -91,9 +134,7 @@ export class AppComponent{
 	  section5 = "Contact";
 		
 	contact = new Contact();
-
-	  name = 'Eddy';
-	  age = '28';
+  
 	  hero: Hero = {
 	  id: 1,
 	  name: 'Hello'
