@@ -123,8 +123,18 @@
 			</div>
 	</div>
 </section>
-
+<section id='portfolio'>
 <h3 [@ChangeColor]='sectionState'>{{section4}}</h3>
+	<div class="row">
+            <ul>
+        		<li *ngFor="let database of data">
+        		   {{database.nom}} 
+				   {{database.description}}
+				   {{database.image}}
+        		</li>
+			</ul>`
+    </div>
+</section>
 <section id='contact'>
 <h3 [@ChangeColor]='sectionState'>{{section5}}</h3>
 <form #validateform='ngForm' (ngSubmit)='onSubmit(validateform.value)' method='post' action='validate.php'>
@@ -174,7 +184,7 @@
 					Vous devez saisir un message
 			</div>
 		</div>
-			<button [disabled]="!ngForm.valid" type='submit' name='submit'>Envoyer</button>
+			<button type='submit' name='submit'>Envoyer</button>
 	</form>
 </section>
 </main>

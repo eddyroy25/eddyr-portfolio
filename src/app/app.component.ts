@@ -12,6 +12,7 @@ import { 	Component,
  
 import { FormGroup , FormControl, Validators } from '@angular/forms';
 import { RequestOptions, URLSearchParams, Headers , Http}    from '@angular/http';
+import { Observable } from 'rxjs/Rx';
  
 // import {HTTP_PROVIDERS}    from '@angular/http';
 // import { HttpModule } from '@angular/http';
@@ -89,17 +90,10 @@ export class AppComponent{
 		message: string;
 		endpoint : string;
 
-    constructor( private http : Http) {
-        this.http = http;
-    }
+		constructor( private http : Http) {
+			this.http = http;
+		}
 
-    ngForm = new FormGroup({
-        name: new FormControl(null),
-        fname: new FormControl(null),
-        email: new FormControl(null),
-        tel: new FormControl(null),
-        message: new FormControl(null)
-    });
 		onSubmit(value: any){
 			console.log(value.name);
 			
@@ -125,6 +119,7 @@ export class AppComponent{
                 response => console.log(response)
             )
 		}
+
 	 title2 = "Webdeveloper";
 	  section1 = "About me";
 	  sectionState: string = 'inactive';
@@ -142,5 +137,16 @@ export class AppComponent{
 
 	title : Title = {
 	name: 'Eddy ROY,'
+	}
+
+	private data;
+
+	ngOnInit(){
+		this.http.get('http://eddyr.marmier.codeur.online/projects.php')
+		.subscribe(result => this.data = result.json());
+	}
 }
-}
+
+
+
+		
