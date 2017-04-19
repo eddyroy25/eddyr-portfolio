@@ -74,7 +74,29 @@ export class Title {
 			style({ transform:'translateX(-100%)'}),
 			animate('5s ease')
 			])
-	])
+	]),
+	trigger('rightSlide', [
+		state('one', style ({
+			transform: 'translateX(0%)'
+		})),
+		state('two', style ({
+			transform: 'translateX(-2.15%)'
+		})),
+		state('three', style ({
+			transform: 'translateX(-4.3%)'
+		})),
+		state('four', style ({
+			transform: 'translateX(-6.45%)'
+		})),
+		state('five', style ({
+			transform: 'translateX(0%)'
+		})),
+		transition ('one => two', [animate('1s ease')]),
+		transition ('two => three', [animate('1s ease')]),
+		transition ('three => four', [animate('1s ease')]),
+		transition ('four => five', [animate('1s ease')]),
+		transition ('five => one', [animate('1s ease')])
+	])	
 	]
 })
 
@@ -84,6 +106,14 @@ export class AppComponent{
 		this.sectionState= (this.sectionState === 'inactive') ? 'active' : 'inactive' && (this.sectionState === 'active') ? 'third' : 'active' && (this.sectionState === 'third') ? 'inactive' : 'third';
 		}
 		
+		rightSlide(){
+			this.slideState = (this.slideState === 'one') ? 'two' : 'one' 
+			&& (this.slideState === 'two') ? 'three' : 'two'
+			&& (this.slideState === 'three') ? 'four' : 'three'
+			&& (this.slideState === 'four') ? 'five' : 'four'
+			&& (this.slideState === 'five') ? 'one' : 'five';
+		}
+			
 		name: string;
 		fname: string;
 		email: string;
@@ -126,15 +156,11 @@ export class AppComponent{
 	  section2 = "Education";
 	  section3 = "Skills";
 	  section4 = "Portfolio";
+	  slideState: string = 'one';
 	  section5 = "Contact";
 		
 	contact = new Contact();
   
-	  hero: Hero = {
-	  id: 1,
-	  name: 'Hello'
-	  };
-
 	title : Title = {
 	name: 'Eddy ROY,'
 	}

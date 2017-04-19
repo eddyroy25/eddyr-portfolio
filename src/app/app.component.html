@@ -33,9 +33,6 @@
   {{title2}}
 </h2>
 </section>
-<!-- <p>{{hero.name}}</p> -->
-<!-- <p>{{hero.id}}</p> -->
-<!-- <input [(ngModel)]="hero.name" placeholder="name"> -->
 <section id='aboutme'>
 	<h3 [@ChangeColor]='sectionState'>{{section1}}</h3>
 	<div class='first row'>
@@ -124,22 +121,27 @@
 	</div>
 </section>
 <section id='portfolio'>
-<h3 [@ChangeColor]='sectionState'>{{section4}}</h3>
-	<div class="row">
-            <ul>
-        		<li *ngFor="let database of data">
-        		   {{database.nom}} 
-				   {{database.description}}
-				   {{database.image}}
-        		</li>
-			</ul>`
-    </div>
+	<h3 [@ChangeColor]='sectionState'>{{section4}}</h3>
+	<button (click)='rightSlide()'[@ChangeColor]='sectionState'>Change</button>
+	<div id='slidediv'>
+		<div class='row'>
+			<div id='slide' class='col-xs-12 col-sm-12' [@rightSlide]='slideState'>
+					<div *ngFor="let database of data">
+					   <p id='project_title'>{{database.nom}}</p>
+					   <p id='project_description'>{{database.description}}</p>
+					   <img class='img-responsive' src='{{database.image}}'/>
+					   <p id='project_link'>Click <a href='{{database.lien}}'>HERE</a> to see the project.</p>
+					</div>
+			</div>
+		</div>
+	</div>
 </section>
 <section id='contact'>
 <h3 [@ChangeColor]='sectionState'>{{section5}}</h3>
+<p>Any questions? Remarks ? You can send me a message. I will answer you as soon as possible.</p>
 <form #validateform='ngForm' (ngSubmit)='onSubmit(validateform.value)' method='post' action='validate.php'>
 		<div class='form-group'>
-			<input type='text' class='form-control' name='name' placeholder="Votre nom..." ngControl='name' required [(ngModel)]='contact.name' #name='ngModel'>
+			<input type='text' class='form-control' name='name' placeholder="Your name..." ngControl='name' required [(ngModel)]='contact.name' #name='ngModel'>
 		</div>
 		<div *ngIf='name.errors && (name.dirty || name.touched)' class='alert' id='err'>
 				<div [hidden]='!name.errors.required'>
@@ -147,7 +149,7 @@
 			</div>
 		</div>
 		<div class='form-group'>
-			<input type='text' class='form-control' name='fname' placeholder="Votre prénom..." required [(ngModel)]='contact.fname' #fname='ngModel'>
+			<input type='text' class='form-control' name='fname' placeholder="Your first name..." required [(ngModel)]='contact.fname' #fname='ngModel'>
 		</div>
 		<div *ngIf='fname.errors && (fname.dirty || fname.touched)' class='alert' id='err'>
 				<div [hidden]='!fname.errors.required'>
@@ -155,7 +157,7 @@
 			</div>
 		</div>
 		<div class='form-group'>
-			<input type='text' class='form-control' name='email' placeholder="Votre e-mail..." pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required [(ngModel)]='contact.email' #email='ngModel'>
+			<input type='text' class='form-control' name='email' placeholder="Your e-mail..." pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required [(ngModel)]='contact.email' #email='ngModel'>
 		</div>
 		<div class="alert" *ngIf='email.errors && email.touched' id='err'>
 					<div class="md-char-counter" [hidden]='!email.errors.required'>
@@ -166,7 +168,7 @@
 					</div>
 		</div>
 		<div class='form-group'>
-			<input type='tel' class='form-control' name='tel' placeholder="Votre numéro..." pattern="[0-9]+" required [(ngModel)]='contact.tel' #tel='ngModel'>
+			<input type='tel' class='form-control' name='tel' placeholder="Your phone number..." pattern="[0-9]+" required [(ngModel)]='contact.tel' #tel='ngModel'>
 		</div>
 		<div class="alert" *ngIf='tel.errors && tel.touched' id='err'>
 					<div class="md-char-counter" [hidden]='!tel.errors.required'>
@@ -177,15 +179,22 @@
 					</div>
 		</div>
 		<div class='form-group'>
-			<textarea type='text' class='form-control' name='message' value='message' placeholder="Votre message..." required [(ngModel)]='contact.message' #message='ngModel'></textarea>
+			<textarea type='text' class='form-control' name='message' value='message' placeholder="Your message..." required [(ngModel)]='contact.message' #message='ngModel'></textarea>
 		</div>
 				<div *ngIf='message.errors && (message.dirty || message.touched)' class='alert' id='err'>
 				<div [hidden]='!message.errors.required'>
 					Vous devez saisir un message
 			</div>
 		</div>
-			<button type='submit' name='submit'>Envoyer</button>
+			<button type='submit' name='submit'[@ChangeColor]='sectionState'>Send</button>
 	</form>
 </section>
 </main>
+<footer>
+
+			<p>You can follow me on Github :</p>
+
+			<a href='#'><img class='github' src='assets/images/github.png'/></a>
+
+</footer>
 </div>

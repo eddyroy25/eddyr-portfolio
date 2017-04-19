@@ -207,6 +207,16 @@ section#education img{
 	padding: 1em;
 }
 
+#contact button {
+	display:block;
+	margin: 0 auto;
+	border: none;
+	background-color: #586176;
+	border-radius: 5px;
+	padding: 1em 2em 1em 2em;
+	margin-bottom: 1em;
+}
+
 .name.errors.required {
 	background-color: red;
 }
@@ -221,6 +231,73 @@ section#education img{
 #err div {
 	width: 18em;
 }
+
+#portfolio #slidediv {
+	border: solid 5px #d0d6e2;
+	border-radius: 5px;
+	margin: 0 0 10px;
+}
+
+#portfolio .row {
+	margin-left: auto;
+	margin-right: auto;
+	width: 21.5em;
+	overflow: hidden;
+	height: 25em;
+}
+
+#portfolio #slide {
+	height: 20em;
+	width: 1000em;
+	position: relative;
+}
+
+#portfolio #slide div{
+	height: inherit;
+	width: 2.15%;
+	display: inline-block;
+}
+
+
+#portfolio img {
+	width: 80%;
+	display:block;
+	margin: 0 auto;
+	border: solid 5px #d0d6e2;
+	border-radius: 5px;
+}
+
+#portfolio #project_title {
+	border: none;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
+	color: #586176;
+}
+
+#portfolio #project_description {
+	border: none;
+}
+
+#portfolio #project_link {
+	border: none;
+	text-align:center;
+}
+
+#portfolio button {
+	display: block;
+	margin: 0 auto;
+	border: none;
+	background-color: #586176;
+	border-radius: 5px;
+	padding: 1em 2em 1em 2em;
+	margin-bottom: 1em;
+}
+
+footer {
+	background-color: #2a395b;
+}
+
 
 @media screen and (max-width: 385px) {
 
