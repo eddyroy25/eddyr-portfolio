@@ -150,11 +150,11 @@ export class AppComponent{
             )
 		}
 
-	 title2 = "Webdeveloper";
-	  section1 = "About me";
+	 title2 = "Développeur web";
+	  section1 = "A propos";
 	  sectionState: string = 'inactive';
-	  section2 = "Education";
-	  section3 = "Skills";
+	  section2 = "Formation";
+	  section3 = "Compétences";
 	  section4 = "Portfolio";
 	  slideState: string = 'one';
 	  section5 = "Contact";

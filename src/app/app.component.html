@@ -37,7 +37,7 @@
 	<h3 [@ChangeColor]='sectionState'>{{section1}}</h3>
 	<div class='first row'>
 		<div id='about' class='aboutme col-xs-6 col-sm-6'>
-			<p id='intro'>Hello, my name is Eddy and I am a webdeveloper. I am 28 years old and I live in Besançon, in France. Here you will discover my projects, but before that I introduce myself. </p>
+			<p id='intro'>Bienvenue sur mon application portfolio ! Je m'appelle Eddy, j'ai 28 ans et je vis à Besançon. Je suis en formation à l'Access Code School de Besançon afin de devenir développeur web.</p>
 		</div>
 		<div id='me' class='aboutme col-xs-6 col-sm-6'>
 			<img class='portrait' src='assets/images/photo.png'>
@@ -45,15 +45,47 @@
 	</div>
 	<div class='first row'>
 		<div id='hobbies' class='col-xs-12 col-sm-12'>
-			<p class='text'>I always liked sciences and nature, as well as astronomy, chemistry , botanics. I decided to become a webdevelopper since it's another hobby and it permits me to link science and creativity.</p>
+			<p class='text'>Passionné par la nature et les sciences depuis de nombreuses années, j'ai toujours aimé acquérir de nouvelles connaissances. Devenir développeur web est pour moi un bon moyen de réunir logique et créativité.</p>
+		</div>
+		<div class='col-xs-12 col-sm-12'>
+			<img id='img_hobbies' class='img-responsive' src='assets/images/desktop.png'/>
 		</div>
 	</div>
 </section>
 <section id='education'>
 <h3 [@ChangeColor]='sectionState'>{{section2}}</h3>
 	<div class='first row'>
-		<div class='col-xs-12 col-sm-12'>
-			<img src='assets/images/desktop.png'/>
+		<div id='cv' class='col-xs-12 col-sm-12'>
+				<div class='col-xs-offset-2 col-xs-2'>
+					<p class='year'>2017</p>
+				</div>
+				<div class='col-xs-6'>
+					<p>Préparation au titre professionnel de développeur web.</p>
+					<p>Access Code School Besançon</p>
+				</div>
+				<div class='col-xs-offset-2 col-xs-2'>
+					<p class='year'>2010</p>
+				</div>
+				<div class='col-xs-6'>
+					<p>Licence professionnelle de chimie analytique</p>
+					<p>Université Blaise Pascal de Clermont-Ferrand</p>
+				</div>
+			
+			
+				<div class='col-xs-offset-2 col-xs-2'>
+					<p class='year'>2009</p>
+				</div>
+				<div class='col-xs-6'>
+					<p>Diplôme universitaire de technologie Chimie</p>
+					<p>Institut Universitaire de Technologie de Besançon</p>
+				</div>
+				<div class='col-xs-offset-2 col-xs-2'>
+					<p class='year'>2007</p>
+				</div>
+				<div class='col-xs-6'>
+					<p>Baccalauréat scientifique</p>
+					<p>Lycée Jean-Michel de Lons le Saunier</p>
+				</div>
 		</div>
 		<div class='text' class='col-xs-12 col-sm-12'>
 			<p class='text'>I always liked sciences and nature, as well as astronomy, chemistry , botanics. I decided to become a webdevelopper since it's another hobby and it permits me to link science and creativity.</p>
@@ -64,6 +96,7 @@
 <section id='skills'>
 <h3 [@ChangeColor]='sectionState'>{{section3}}</h3>
 	<div id='skillscontent' class='row'>
+	<p class='text'>Voici l'ensemble des mes compétences web, en ce qui concerne le front-end, le back-end, les technologies et les logiciels utilisés.</p>
 			<div class='first row img-responsive'>
 					<div class='col-xs-3 col-sm-3'>
 						<img class='php' src='assets/images/php.png'/>
@@ -122,7 +155,8 @@
 </section>
 <section id='portfolio'>
 	<h3 [@ChangeColor]='sectionState'>{{section4}}</h3>
-	<button (click)='rightSlide()'[@ChangeColor]='sectionState'>Change</button>
+	<p class='text'>Retrouvez ici les principaux projets que j'ai pu réaliser au cours de ma formation à l'ACS.</p>
+	<button (click)='rightSlide()'[@ChangeColor]='sectionState'>Faire défiler</button>
 	<div id='slidediv'>
 		<div class='row'>
 			<div id='slide' class='col-xs-12 col-sm-12' [@rightSlide]='slideState'>
@@ -138,10 +172,10 @@
 </section>
 <section id='contact'>
 <h3 [@ChangeColor]='sectionState'>{{section5}}</h3>
-<p>Any questions? Remarks ? You can send me a message. I will answer you as soon as possible.</p>
+<p>Vous avez des questions, des remarques ? N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais !</p>
 <form #validateform='ngForm' (ngSubmit)='onSubmit(validateform.value)' method='post' action='validate.php'>
 		<div class='form-group'>
-			<input type='text' class='form-control' name='name' placeholder="Your name..." ngControl='name' required [(ngModel)]='contact.name' #name='ngModel'>
+			<input type='text' class='form-control' name='name' placeholder="Votre nom..." ngControl='name' required [(ngModel)]='contact.name' #name='ngModel'>
 		</div>
 		<div *ngIf='name.errors && (name.dirty || name.touched)' class='alert' id='err'>
 				<div [hidden]='!name.errors.required'>
@@ -149,7 +183,7 @@
 			</div>
 		</div>
 		<div class='form-group'>
-			<input type='text' class='form-control' name='fname' placeholder="Your first name..." required [(ngModel)]='contact.fname' #fname='ngModel'>
+			<input type='text' class='form-control' name='fname' placeholder="Votre  prénom..." required [(ngModel)]='contact.fname' #fname='ngModel'>
 		</div>
 		<div *ngIf='fname.errors && (fname.dirty || fname.touched)' class='alert' id='err'>
 				<div [hidden]='!fname.errors.required'>
@@ -157,7 +191,7 @@
 			</div>
 		</div>
 		<div class='form-group'>
-			<input type='text' class='form-control' name='email' placeholder="Your e-mail..." pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required [(ngModel)]='contact.email' #email='ngModel'>
+			<input type='text' class='form-control' name='email' placeholder="Votre e-mail..." pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required [(ngModel)]='contact.email' #email='ngModel'>
 		</div>
 		<div class="alert" *ngIf='email.errors && email.touched' id='err'>
 					<div class="md-char-counter" [hidden]='!email.errors.required'>
@@ -168,7 +202,7 @@
 					</div>
 		</div>
 		<div class='form-group'>
-			<input type='tel' class='form-control' name='tel' placeholder="Your phone number..." pattern="[0-9]+" required [(ngModel)]='contact.tel' #tel='ngModel'>
+			<input type='tel' class='form-control' name='tel' placeholder="Votre numéro de téléphone..." pattern="[0-9]+" required [(ngModel)]='contact.tel' #tel='ngModel'>
 		</div>
 		<div class="alert" *ngIf='tel.errors && tel.touched' id='err'>
 					<div class="md-char-counter" [hidden]='!tel.errors.required'>
@@ -179,22 +213,28 @@
 					</div>
 		</div>
 		<div class='form-group'>
-			<textarea type='text' class='form-control' name='message' value='message' placeholder="Your message..." required [(ngModel)]='contact.message' #message='ngModel'></textarea>
+			<textarea type='text' class='form-control' name='message' value='message' placeholder="Votre message..." required [(ngModel)]='contact.message' #message='ngModel'></textarea>
 		</div>
 				<div *ngIf='message.errors && (message.dirty || message.touched)' class='alert' id='err'>
 				<div [hidden]='!message.errors.required'>
 					Vous devez saisir un message
 			</div>
 		</div>
-			<button type='submit' name='submit'[@ChangeColor]='sectionState'>Send</button>
+			<button type='submit' name='submit'[@ChangeColor]='sectionState'>Envoyer</button>
 	</form>
 </section>
 </main>
 <footer>
-
-			<p>You can follow me on Github :</p>
-
-			<a href='#'><img class='github' src='assets/images/github.png'/></a>
-
+	<div class='row'>
+		<div class='col-xs-7'>
+			<p>Retrouvez-moi sur Github :</p>
+		</div>
+		<div class='col-xs-5'>
+			<a href='https://github.com/eddyroy25'><img class='github' src='assets/images/github.png'/></a>
+		</div>
+	</div>
+	<div class='row'>
+		<p id='rights'>© Eddy ROY - Tous droits réservés.</p>
+	</div>
 </footer>
 </div>
